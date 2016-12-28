@@ -58,18 +58,7 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-document.onkeydown = drumBeat;
 
-function drumBeat(e) {
-    e = e || window.event;
-    console.log(e.keyCode);
-    var key = document.querySelector('.key[data-key="'+e.keyCode+'"]');    
-    var audio = document.querySelector('audio[data-key="'+e.keyCode+'"]');   
-    audio.currentTime = 0;
-    audio.play();
-    key.classList.add("playing");
-    setTimeout(function () {key.classList.remove("playing");}, 100);
-}
 </script>
 
 
