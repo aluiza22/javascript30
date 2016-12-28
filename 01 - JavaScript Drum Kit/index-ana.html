@@ -58,11 +58,9 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-document.onkeydown = drumBeat;
 
 function drumBeat(e) {
     e = e || window.event;
-    console.log(e.keyCode);
     const key = document.querySelector('.key[data-key="'+e.keyCode+'"]');    
     if(!key) return;
     const audio = document.querySelector('audio[data-key="'+e.keyCode+'"]');   
@@ -76,8 +74,11 @@ function removeTransition(e) {
   if (e.propertyName !== 'transform') return;
   this.classList.remove("playing");
 }
+
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+window.onkeydown = drumBeat;
 </script>
 
 
